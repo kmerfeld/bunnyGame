@@ -7,7 +7,7 @@ def clearScreen():
             os.system('cls')
         else: 
             os.system('clear')
-
+clearScreen()
 print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
 print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
 print("@@@                    THE BUNNY GAME                   @@@")
@@ -19,7 +19,7 @@ print("@@@ explanitory. just play it. If this program closes,  @@@")
 print("@@@ you lose                                            @@@")
 print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
 print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")                              
-wait = input("")        #This just says wait intil enter is pressed
+wait = input("\n Press enter to continue ...")        #This just says wait intil enter is pressed
 clearScreen()
 
 loop = 0
@@ -27,7 +27,7 @@ while loop < 1:
     print("     (\__/)")
     print("     ( -.-)")
     print("    C(\")(\")")
-    time.sleep(3)
+    time.sleep(1.5)
     print("What do you want to do with it?")
     print(" 1) Pet")
     print(" 2) Poke")
@@ -44,7 +44,7 @@ while loop < 1:
         print("    C(\")(\")                                   ")
         time.sleep(5)
         print(" umm, I think its best to do what it says.... ")
-        wait = input("")
+        wait = input("\n Press enter to continue ...")
         clearScreen()
         
     
@@ -78,21 +78,22 @@ while loop < 1:
         print("     (\__/)")
         print("     ( -.-)")
         print("    C(\")(\")")
-        time.sleep(3)
-        print(" random joke  im to lazy to think of")
         time.sleep(1.5)
+        print(" random joke  im to lazy to think of")
+        time.sleep(3)
         clearScreen()
         print("     (\__/) gasp")
         print("     ( 0.0)")
         print("    C(\")(\")")
-        time.sleep(1.5)
+        time.sleep(3)
+        clearScreen()
         print("     (\__/) Giggle, lol")
         print("     ( *.*)")
         print("    C(\")(\")")
         time.sleep(3)
         clearScreen()
         print(" You made the bunny laugh, awwww cute.")
-        wait = input("")
+        wait = input("\n Press enter to continue ...")
         clearScreen()
 
     elif choice == 4:
@@ -100,25 +101,27 @@ while loop < 1:
         print("     ( -.-)")
         print("    C(\")(\")")
         print(" hey bunny")
-        time.sleep(1.5)
+        time.sleep(3)
         clearScreen()
         print("     (\__/) ?")
         print("     ( o.o)")
         print("    C(\")(\")")
-        time.sleep(1.5)
+        time.sleep(3)
         clearScreen()
         print("     (\__/) ?")
         print("     ( o o)")
         print("    C(\")(\")")
         print(" I got your nose")
-        time.sleep(1.5)
+        time.sleep(3)
+        clearScreen()
         print("     (\__/) AHHHHH!!")
-        print("     ( o.o)")
+        print("     ( o o)")
         print("    C(\")(\")")
         time.sleep(4)
         clearScreen()
         print("You stole the bunny's nose. why, why did you do that??? \nWhy??")
-        time.sleep(5)
+        time.sleep(3)
+        wait = input("\n Press enter")
         clearScreen()
         break
 
@@ -127,9 +130,13 @@ while loop < 1:
         while name != "bunny":
             name = input("Name: ")
             if name == "bunny": 
-                    print("Congratulations! you have won the game!\n")
-                    print("When i first made the game a song played at this part")
-                    print("I did not include it for copyright reasons. Thanks for playing")
+                clearScreen()
+                print("Congratulations! you have won the game!\n")
+                print("When i first made the game a song played at this part")
+                print("I did not include it for copyright reasons. Thanks for playing")
+                wait = input("\n Press enter")
+                clearScreen()
+                loop = 1
             else:
                 print("EXTERMANATE!!!, wait sorry WRONG USER")
 
