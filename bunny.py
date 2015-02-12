@@ -5,7 +5,6 @@ import platform
 def clearScreen():
         if platform.system() == 'Windows':
             os.system('cls')
-            print("Linux")
         else: 
             os.system('clear')
 
