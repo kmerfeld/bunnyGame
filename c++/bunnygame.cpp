@@ -1,11 +1,14 @@
 #include <iostream>
 #include <ncurses.h>
 #include <unistd.h>
+#include <string.h>
+#include <string>
 using namespace std;
 
 int main()
 {
 	initscr();
+	cbreak();
 	printw("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
 	printw("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
 	printw("@@@                    THE BUNNY GAME                   @@@\n");
@@ -37,6 +40,7 @@ int main()
 		printw( " 1) Pet\n");
 		printw( " 2) Poke\n");
 		printw( " 3) Tell Joke\n");
+		printw( " 4) Steal nose\n");
 		refresh();
 		char choice;
 		choice = getch();	
@@ -76,7 +80,7 @@ int main()
 			{
 				clear();
 				printw("%d\n", count);
-				count -= 1;
+				count -= 2;
 				sleep(1);
 				refresh();
 			}
@@ -85,7 +89,7 @@ int main()
 			printw("Guess the bunny beat those terrorists to it...\n");
 			getch();
 		}
-		else if (choice == "3")
+		else if (choice == '3')
 		{
 			clear();
 			printw("     (\\__/)\n");
@@ -108,14 +112,12 @@ int main()
 			sleep(3);
 			clear();
 			printw(" You made the bunny laugh, awwww cute.\n");
-			wait = input("\n Press enter to continue ...\n");
+			printw("Press enter to continue ...\n");
+			getch();
 			clear();
 			refresh();
-
-
-
 		}
-		else if (choice == "4")
+		else if (choice == '4')
 		{
 			clear();
 			printw("     (\\__/)");
@@ -149,27 +151,49 @@ int main()
 			getch();
 			clear();
 		}
-		else if (choice == "5")
+		else if (choice == '5')
 		{
-			name = "carl";
-			while name != "bunny"
+			clear();
+			std::string name;
+			std::string answer ("bunny");
+			refresh();
+			
+			while (name != answer)
 			{
-				name = input("Name: ");
-				if name == "bunny"; 
-				clear();
-				print("Congratulations! you have won the game!\n");
-				print("When i first made the game a song played at this part\n");
-				print("I did not include it for copyright reasons. Thanks for playing\n");
-				wait = input("Press enter\n");
-				clear();
-				loop = 1;
-			}
-			else
-			{
-				print("EXTERMANATE!!!, wait sorry WRONG USER")
+				printw("name: ");
+				refresh();
+				//std::getline (std::cin,name);
+				getline(std::cin >> name);
+				printw("name   is %s \n",name);
+				printw("answer is %s \n",answer);
+				refresh();
+				getch();
+				if (name.compare(answer) != 0)
+				{
+					clear();
+					printw("Congratulations! you have won the game!\n");
+					printw("When i first made the game a song played at this part\n");
+					printw("I did not include it for copyright reasons. Thanks for playing\n\n");
+					printw("Press enter\n");
+					getch();
+					clear();
+					loop = 2;
+					endwin();
+					return 0;
+				}
+				else
+				{
+					clear();
+					printw("EXTERMANATE!!!, wait sorry WRONG USER\n");
+					refresh();
+					sleep(1);
 
+				}
 			}
+			
+		}
 	}
+	
 
 	endwin();
 	return 0;
