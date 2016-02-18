@@ -2,7 +2,6 @@
 #include <ncurses.h>
 #include <unistd.h>
 #include <string.h>
-#include <string>
 using namespace std;
 
 int main()
@@ -29,8 +28,7 @@ int main()
 
 
 
-	int loop = 0;
-	while (loop < 1)
+	while (true)
 	{
 		clear();
 		printw( "     (\\__/)\n");
@@ -76,7 +74,7 @@ int main()
 			refresh();
 			sleep(2);
 			int count = 10;
-			while (count >= 0)
+			while (count > 0)
 			{
 				clear();
 				printw("%d\n", count);
@@ -84,10 +82,13 @@ int main()
 				sleep(1);
 				refresh();
 			}
+			clear();
 			refresh();
 			printw("SOMEONE POKED THE BUNNY. THE WORLD IS OVER.\n");
 			printw("Guess the bunny beat those terrorists to it...\n");
+			refresh();
 			getch();
+			break;
 		}
 		else if (choice == '3')
 		{
@@ -95,9 +96,11 @@ int main()
 			printw("     (\\__/)\n");
 			printw("     ( -.-)\n");
 			printw("    C(\")(\")\n");
+			refresh();
 			sleep(1);
-			printw(" random joke  im to lazy to think of\n");
-			sleep(3);
+			printw("random joke  im to lazy to think of\n");
+			refresh();
+			sleep(2);
 			clear();
 			printw("     (\\__/) gasp\n");
 			printw("     ( 0.0)\n");
@@ -120,55 +123,53 @@ int main()
 		else if (choice == '4')
 		{
 			clear();
-			printw("     (\\__/)");
-			printw("     ( -.-)");
-			printw("    C(\")(\")");
-			printw(" hey bunny");
+			printw("     (\\__/)\n");
+			printw("     ( -.-)\n");
+			printw("    C(\")(\")\n");
+			printw(" hey bunny\n");
 			refresh();
-			sleep(3);
+			sleep(1);
 			clear();
-			printw("     (\\__/) ?");
-			printw("     ( o.o)");
-			printw("    C(\")(\")");
-			sleep(3);
-			refresh();
-			clear();
-			printw("     (\\__/) ?");
-			printw("     ( o o)");
-			printw("    C(\")(\")");
-			printw(" I got your nose");
+			printw("     (\\__/) ?\n");
+			printw("     ( o.o)\n");
+			printw("    C(\")(\")\n");
 			sleep(3);
 			refresh();
 			clear();
-			printw("     (\\__/) AHHHHH!!");
-			printw("     ( o o)");
-			printw("    C(\")(\")");
+			printw("     (\\__/) ?\n");
+			printw("     ( o o)\n");
+			printw("    C(\")(\")\n");
+			printw(" I got your nose\n");
+			sleep(3);
+			refresh();
+			clear();
+			printw("     (\\__/) AHHHHH!!\n");
+			printw("     ( o o)\n");
+			printw("    C(\")(\")\n");
 			sleep(4);
-			printw("You stole the bunny's nose. why, why did you do that??? \nWhy??");
+			printw("You stole the bunny's nose. why, why did you do that??? \nWhy??\n");
 			refresh();
 			sleep(1);
 			printw("Press enter\n");
 			getch();
 			clear();
+			break;
 		}
 		else if (choice == '5')
 		{
 			clear();
-			std::string name;
-			std::string answer ("bunny");
+			char name[21];
+			char answer[7] = "bunny";
 			refresh();
 			
 			while (name != answer)
 			{
 				printw("name: ");
 				refresh();
-				//std::getline (std::cin,name);
-				getline(std::cin >> name);
-				printw("name   is %s \n",name);
-				printw("answer is %s \n",answer);
+				scanw("%20s", name);
 				refresh();
-				getch();
-				if (name.compare(answer) != 0)
+				sleep(1);
+				if (strcmp(name, "bunny")  == 0)
 				{
 					clear();
 					printw("Congratulations! you have won the game!\n");
@@ -177,7 +178,6 @@ int main()
 					printw("Press enter\n");
 					getch();
 					clear();
-					loop = 2;
 					endwin();
 					return 0;
 				}
@@ -189,6 +189,7 @@ int main()
 					sleep(1);
 
 				}
+				
 			}
 			
 		}
