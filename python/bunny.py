@@ -2,14 +2,17 @@
 import time
 import os
 import platform
-#Method for clearing the screen
+
+
 def clearScreen():
-        if platform.system() == 'Windows':
-            os.system('cls')
-        else: 
-            os.system('clear')
+    """#Method for clearing the screen"""
+    if platform.system() == 'Windows':
+        os.system('cls')
+    else:
+        os.system('clear')
+
+
 clearScreen()
-#comment
 print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
 print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
 print("@@@                    THE BUNNY GAME                   @@@")
@@ -20,8 +23,11 @@ print("@@@ has 5 err i mean 4 commands, its pretty self        @@@")
 print("@@@ explanitory. just play it. If this program closes,  @@@")
 print("@@@ you lose                                            @@@")
 print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")                              
-wait = input("\n Press enter to continue ...")        #This just says wait intil enter is pressed
+print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+
+# This just says wait intil enter is pressed
+wait = input("\n Press enter to continue ...")
+
 clearScreen()
 
 loop = 0
@@ -38,7 +44,6 @@ while loop < 1:
     choice = int(input("Choice: "))
     clearScreen()
 
-
     if choice == 1:
         time.sleep(1.5)
         print("     (\__/) Bunny like pets. Now let me sleep.")
@@ -48,9 +53,8 @@ while loop < 1:
         print(" umm, I think its best to do what it says.... ")
         wait = input("\n Press enter to continue ...")
         clearScreen()
-        
-    
-    elif choice == 2 :
+
+    elif choice == 2:
         print("     (\__/)")
         print("     ( -.-)")
         print("    C(\")(\")")
@@ -64,12 +68,13 @@ while loop < 1:
         print(" MWAHAHA")
         time.sleep(2.5)
         count = 10
+
         def countdown(count):
-                while (count >= 0):
-                     clearScreen()
-                     print (count)
-                     count -= 1
-                     time.sleep(1)
+            while (count >= 0):
+                clearScreen()
+                print(count)
+                count -= 1
+                time.sleep(1)
         countdown(10)
         clearScreen()
         print("SOMEONE POKED THE BUNNY. THE WORLD IS OVER.")
@@ -121,7 +126,7 @@ while loop < 1:
         print("    C(\")(\")")
         time.sleep(4)
         clearScreen()
-        print("You stole the bunny's nose. why, why did you do that??? \nWhy??")
+        print("You stole the bunny's nose. why did you do that??? \nWhy??")
         time.sleep(3)
         wait = input("\n Press enter")
         clearScreen()
@@ -131,17 +136,14 @@ while loop < 1:
         name = "carl"
         while name != "bunny":
             name = input("Name: ")
-            if name == "bunny": 
+            if name == "bunny":
                 clearScreen()
                 print("Congratulations! you have won the game!\n")
-                print("When i first made the game a song played at this part")
-                print("I did not include it for copyright reasons. Thanks for playing")
+                print("When i first made the game a song played here")
+                print("I did not include it for copyright reasons."
+                      "Thanks for playing")
                 wait = input("\n Press enter")
                 clearScreen()
                 loop = 1
             else:
                 print("EXTERMANATE!!!, wait sorry WRONG USER")
-
-        
-                
-
