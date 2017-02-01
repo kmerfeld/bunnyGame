@@ -10,7 +10,8 @@ fn clear_screen() {
 }
 fn pause() {
     let mut enter = String::new();
-    io::stdin().read_line(&mut enter)
+    io::stdin()
+        .read_line(&mut enter)
         .expect("failed to read line");
 }
 
@@ -29,7 +30,7 @@ fn main() {
     println!("@@@ explanitory. just play it. If this program closes,  @@@");
     println!("@@@ you lose                                            @@@");
     println!("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-    println!("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");                            
+    println!("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 
 
     pause();
@@ -48,17 +49,18 @@ fn main() {
 
         let mut choice = String::new();
 
-        io::stdin().read_line(&mut choice)
+        io::stdin()
+            .read_line(&mut choice)
             .expect("failed to read line");
 
-        let choice: u32 = match choice.trim().parse(){
+        let choice: u32 = match choice.trim().parse() {
             Ok(num) => num,
             Err(_) => continue,
         };
         clear_screen();
 
 
-        if choice == 1{
+        if choice == 1 {
             println!("     (\\__/) Bunny like pets. Now let me sleep.");
             println!("     ( -.-) That means leave.                 ");
             println!("    C(\")(\")                                   ");
@@ -68,8 +70,7 @@ fn main() {
             println!("\nPress enter to continue ...");
             pause();
             clear_screen();
-        }
-        else if choice == 2{
+        } else if choice == 2 {
             println!("     (\\__/)");
             println!("     ( -.-)");
             println!("    C(\")(\")");
@@ -82,7 +83,7 @@ fn main() {
             println!(" I WILL DESTROY THE WOLRD");
             println!(" MWAHAHA");
             thread::sleep(two_seconds);
-            let v: Vec<i32> = vec![10,9,8,7,6,5,4,3,2,1,0];
+            let v: Vec<i32> = vec![10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
             for i in v {
                 clear_screen();
                 println!("{}", i);
@@ -96,10 +97,7 @@ fn main() {
             break;
 
 
-        }
-
-
-        else if choice == 3 {
+        } else if choice == 3 {
             thread::sleep(two_seconds);
             println!("     (\\__/)");
             println!("     ( -.-)");
@@ -124,8 +122,7 @@ fn main() {
             clear_screen();
 
 
-        }
-        else if choice == 4{
+        } else if choice == 4 {
             println!("     (\\__/)");
             println!("     ( -.-)");
             println!("    C(\")(\")");
@@ -155,14 +152,14 @@ fn main() {
             break;
 
 
-        }
-        else if choice == 5{
+        } else if choice == 5 {
             let mut name = String::new();
             loop {
 
                 println!("name: ");
                 //read in name
-                io::stdin().read_line(&mut name)
+                io::stdin()
+                    .read_line(&mut name)
                     .expect("failed to read line");
                 let name = name.trim();
 
@@ -175,8 +172,7 @@ fn main() {
                     println!("\nPress enter");
                     pause();
                     return;
-                }
-                else {
+                } else {
                     clear_screen();
                     println!("EXTERMANATE!!!, wait sorry WRONG USER")
 
